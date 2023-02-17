@@ -1,0 +1,82 @@
+html {
+    width: 100vw;
+    height: 100vh;
+    --border: 5px solid black;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContainer {
+    width: 40%;
+    height: 70%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.scoreBoard {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.player {
+    width: 40%;
+    display: flex;
+}
+
+.player > h2 {
+    margin: 10px;
+}
+
+.gameBoard {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}
+
+#two {
+    border: var(--border);
+    border-top: none;
+    border-bottom: none;
+}
+
+#four {
+    border: 5px solid black;
+    border-left: none;
+    border-right: none;
+}
+
+#five {
+    border: var(--border);
+}
+
+#six {
+    border: var(--border);
+    border-left: none;
+    border-right: none;
+}
+
+#eight {
+    border: var(--border);
+    border-top: none;
+    border-bottom: none;
+}
+
