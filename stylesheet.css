@@ -1,31 +1,92 @@
 html {
-    width: 100vw;
-    height: 100vh;
-    --border: 5px solid black;
+    width: 99vw;
+    height: 99vh;
+    --border: 5px solid #475569;
+    --box-color: #e2e8f0;
+    --bg-color: #94a3b8;
+    --text-color: #475569;
+    --hover-color: #f1f5f9;
 }
 
 body {
     margin: 0;
     width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+.mainContainer {
+    width: 40%;
     height: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
 }
 
-.mainContainer {
-    width: 40%;
-    height: 70%;
-    border: 1px solid black;
+#boardContainer {
+    background-color: var(--box-color);
+    border: var(--border);
+    visibility: hidden;
+    position: absolute;
+    width: 75%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding: 50px;
+}
+
+#openSidebar {
+    position: absolute;
+    height: 100%;
+    right: -30px;
+    border: var(--border);
+}
+
+#openSidebar:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+#sideBar {
+    visibility: hidden;
+    position: absolute;
+    border: var(--border);
+    background-color: var(--box-color);
+    height: 100%;
+    width: 200px;
+    right: -210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#sideBar input {
+    width: 80%;
+}
+
+#sideBarStart {
+    background-color: var(--box-color);
+    border: 2px solid #475569;
+    font-weight: bold;
+}
+
+#sideBarStart:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
 }
 
 .scoreBoard {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom: 10%;
+    border: var(--border);
 }
 
 .player {
@@ -52,31 +113,108 @@ body {
     font-size: 5em;
 }
 
-#two {
+.tile:hover {
+    background-color: var(--hover-color);
+}
+
+#one {
     border: var(--border);
     border-top: none;
     border-bottom: none;
 }
 
-#four {
+#three {
     border: 5px solid black;
     border-left: none;
     border-right: none;
 }
 
-#five {
+#four {
     border: var(--border);
 }
 
-#six {
+#five {
     border: var(--border);
     border-left: none;
     border-right: none;
 }
 
-#eight {
+#seven {
     border: var(--border);
     border-top: none;
     border-bottom: none;
+}
+
+#reset {
+    position: absolute;
+    bottom: 20px;
+    background-color: var(--box-color);
+    color: var(--text-color);
+    font-weight:900;
+    font-size: 1.1em;
+    width: 150px;
+    height: 30px;
+    visibility: hidden;
+}
+
+#reset:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+#setupForm {
+    background-color: var(--box-color);
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 75%;
+    font-size: 1.1em;
+    font-weight: bolder;
+    position: relative;
+}
+
+input {
+    border: 2px solid #475569;
+    background-color: var(--box-color);
+    height: 25px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.playerContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#winnerContainer {
+    visibility: hidden;
+    position: absolute;
+    width: 70%;
+    height: 15%;
+    border: var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--box-color);
+}
+
+#start {
+    position: absolute;
+    bottom: 30px;
+    margin-top: 10px;
+    height: 30px;
+    width: 130px;
+    border: 2px solid #475569;
+    background-color: var(--box-color);
+    font-weight: bolder;
+}
+
+#start:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
 }
 

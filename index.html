@@ -8,28 +8,69 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
+    <h1>Tic Tac Toe</h1>
     <div class="mainContainer">
-        <div class="scoreBoard">
-            <div class="player">
-                <h2>Player One:</h2><h2 id="pOne">0</h2>
+        <div id="boardContainer">
+            <div class="scoreBoard">
+                <div class="player">
+                    <h2 id="playerOneHeader"></h2><h2 id="playerOneScore"></h2>
+                </div>
+                <div class="player">
+                    <h2 id="playerTwoHeader"></h2><h2 id="playerTwoScore"></h2>
+                </div>
             </div>
-            <div class="player">
-                <h2>Player Two:</h2><h2 id="pTwo">0</h2>
+            <div class="gameBoard">
+                <div class="tile" id="zero"></div>
+                <div class="tile" id="one"></div>
+                <div class="tile" id="two"></div>
+                <div class="tile" id="three"></div>
+                <div class="tile" id="four"></div>
+                <div class="tile" id="five"></div>
+                <div class="tile" id="six"></div>
+                <div class="tile" id="seven"></div>
+                <div class="tile" id="eight"></div>
+            </div>
+            <button id="reset">Play Again</button>
+            <div id="winnerContainer">
+                <h2 id="winner"></h2>
+            </div>
+            <button id="openSidebar">></button>
+            <div id="sideBar">
+                <div id="sideBarForm">
+                    <div class="playerContainer">
+                        <h3>Player One</h3>
+                        <label for="playerOneName">Name:</label>
+                        <input type="text" placeholder="Enter Name" id="sideBarOneName">
+                    </div>
+                
+                    <div class="playerContainer">
+                        <h3>Player Two</h3>
+                        <label for="playerTwoName">Name:</label>
+                        <input type="text" placeholder="Enter Name" id="sideBarTwoName">
+                    </div>
+                
+                    <button type="button" id="sideBarStart">Restart Game</button>
+                </div>
             </div>
         </div>
-        <div class="gameBoard">
-            <div class="tile" id="one"></div>
-            <div class="tile" id="two"></div>
-            <div class="tile" id="three"></div>
-            <div class="tile" id="four"></div>
-            <div class="tile" id="five"></div>
-            <div class="tile" id="six"></div>
-            <div class="tile" id="seven"></div>
-            <div class="tile" id="eight"></div>
-            <div class="tile" id="nine"></div>
+        <div id="setupForm">
+            <div class="playerContainer">
+                <h3>Player One</h3>
+                <label for="playerOneName">Name:</label>
+                <input type="text" placeholder="Enter Name" id="playerOneName">
+            </div>
+        
+            <div class="playerContainer">
+                <h3>Player Two</h3>
+                <label for="playerTwoName">Name:</label>
+                <input type="text" placeholder="Enter Name" id="playerTwoName">
+            </div>
+        
+            <button type="button" id="start">Start Game</button>
         </div>
-        <button id="reset">RESET</button>
+        
     </div>
+    <h4>By Johnny York - <a href="https://www.github.com/johnnyyork13">GitHub</a></h4>
 
     
 
