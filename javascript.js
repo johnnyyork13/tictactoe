@@ -49,6 +49,7 @@ function startGame() {
     //create objects and set default variables
     const board = new gameBoard();
     board.newBoard();
+
     const playerOne = new player("X", playerOneName.value);
     const playerTwo = new player("O", playerTwoName.value);
     playerOneHeader.textContent = playerOneName.value + ":";
@@ -59,6 +60,8 @@ function startGame() {
     //change visibility of board
     boardContainer.style.visibility = 'visible';
     setupForm.style.visibility = 'hidden';
+
+    
 
     function gameBoard() {
         this.gameOver = false;
@@ -95,14 +98,15 @@ function startGame() {
     
     //game function
     function playTurn() {
-        console.log(board.turnCount);
         //figures out who's turn it is and checks if element is empty
+        //check player one
         if (playerOne.playedTurn === false && this.textContent === "" && !board.gameOver) {
             playerOne.turn(this, this.id);
             playerOne.playedTurn = true; 
             board.board[this.id] = playerOne.sign;
             checkVictory(playerOne);
             board.turnCount += 1;
+        //check player two
         } else if (playerOne.playedTurn === true && this.textContent === "" && !board.gameOver) {
             playerTwo.turn(this, this.id);
             playerOne.playedTurn = false;
@@ -115,6 +119,7 @@ function startGame() {
     //See if anyone wins
     function checkVictory(player) {
         let b = Object.values(board.board);
+        //list of possible win conditions
         const conditions = [b.slice(0,3), b.slice(3, 6), b.slice(6, 9), [b[0], b[3], b[6]], [b[1], b[4], b[7]], [b[2], b[5], b[8]], [b[0], b[4], b[8]], [b[2], b[4], b[6]]];
         for (i = 0; i < conditions.length; i++) {
             if (conditions[i][0] === player.sign && conditions[i][1] === player.sign && conditions[i][2] === player.sign && board.turnCount < 10) {
